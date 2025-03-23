@@ -1,0 +1,26 @@
+{
+    "projects": [
+      {
+        "id": 1,
+        "title": "Portfolio Website",
+        "description": "A personal portfolio website built with Angular.",
+        "image": "assets/images/portfolio.png",
+        "link": "https://yourportfolio.com"
+      },
+      {
+        "id": 2,
+        "title": "E-commerce App",
+        "description": "An Angular-based e-commerce application.",
+        "image": "assets/images/ecommerce.png",
+        "link": "https://yourecommerce.com"
+      },
+      {
+        "id": 3,
+        "title": "Blog Platform",
+        "description": "A dynamic blog built with Angular and JSON Server.",
+        "image": "assets/images/blog.png",
+        "link": "https://yourblog.com"
+      }
+    ]
+  }
+  

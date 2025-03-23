@@ -1,0 +1,36 @@
+<!-- src/app/components/about/about.component.html -->
+<div class="about-container">
+  <h2>About Me</h2>
+  <p>
+    Hi, I'm <strong>Your Name</strong>, a passionate developer specializing in
+    front-end and full-stack development. I enjoy building interactive and
+    high-performance web applications.
+  </p>
+
+  <div class="education-section">
+    <h3>Education</h3>
+    <ul>
+      <li><strong>10th:</strong> DEF High School - Marks: 90%</li>
+      <li><strong>12th:</strong> ABC Senior Secondary School - Marks: 85%</li>
+      <li><strong>B.Tech:</strong> XYZ University - Grade: A+</li>
+    </ul>
+  </div>
+
+  <div class="experience-section">
+    <h3>Experience</h3>
+    <ul>
+      <li>
+        <strong>Frontend Developer</strong> at XYZ Company (2022 - Present)
+      </li>
+      <li><strong>Angular Developer</strong> at ABC Tech (2020 - 2022)</li>
+      <li><strong>Intern</strong> at DEF Solutions (2019 - 2020)</li>
+    </ul>
+  </div>
+
+  <div class="skills-section">
+    <h3>Skills</h3>
+    <div class="skills-list">
+      <span *ngFor="let skill of skills">{{ skill }}</span>
+    </div>
+  </div>
+</div>
