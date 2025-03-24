@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Contact, SubmissionService } from '../../services/submission.service';
 
 @Component({
   selector: 'app-reactive-contact',
@@ -9,7 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ReactiveContactComponent {
   contactForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private submissionService: SubmissionService
+  ) {}
 
   ngOnInit(): void {
     this.contactForm = this.fb.group({
@@ -21,9 +25,17 @@ export class ReactiveContactComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
-      console.log('Reactive form submitted:', this.contactForm.value);
-      alert('Message sent!');
-      this.contactForm.reset();
+      const contact: Contact = this.contactForm.value;
+      this.submissionService.submitContact(contact).subscribe({
+        next: (res) => {
+          alert('Message sent successfully!');
+          this.contactForm.reset();
+        },
+        error: (err) => {
+          console.error('Error sending message:', err);
+          alert('There was an error sending your message. Please try again.');
+        },
+      });
     }
   }
 }
